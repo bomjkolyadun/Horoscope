@@ -1,0 +1,1 @@
+../../../InMobiSDK/Libs/Headers/IMBannerDelegate.h

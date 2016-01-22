@@ -1,0 +1,1 @@
+../../../../SpotX-SDK/AdManager.framework/Headers/SpotX.h

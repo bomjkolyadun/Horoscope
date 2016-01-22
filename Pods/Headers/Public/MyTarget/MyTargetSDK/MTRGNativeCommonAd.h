@@ -1,0 +1,1 @@
+../../../../MyTarget/MyTargetSDK.framework/Headers/MTRGNativeCommonAd.h

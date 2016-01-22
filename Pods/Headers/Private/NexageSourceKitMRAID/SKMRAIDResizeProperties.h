@@ -1,0 +1,1 @@
+../../../NexageSourceKitMRAID/src/MRAID/properties/SKMRAIDResizeProperties.h

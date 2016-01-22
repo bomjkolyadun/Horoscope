@@ -1,0 +1,6 @@
+framework module FacebookAdsSDK {
+  umbrella header "FacebookAdsSDK.h"
+
+  export *
+  module * { export * }
+}

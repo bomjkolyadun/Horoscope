@@ -1,0 +1,1 @@
+../../../NexageSourceKitCommon/src/SKCommonSettings.h

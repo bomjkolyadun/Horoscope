@@ -1,0 +1,1 @@
+../../../../AmazonAds/AmazonAd.framework/Versions/A/Headers/AmazonAdRegistration.h

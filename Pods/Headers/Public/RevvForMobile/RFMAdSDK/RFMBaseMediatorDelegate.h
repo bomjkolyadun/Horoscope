@@ -1,0 +1,1 @@
+../../../../RevvForMobile/SDK/RFMSDK/RFMAdSDK.framework/Versions/A/Headers/RFMBaseMediatorDelegate.h

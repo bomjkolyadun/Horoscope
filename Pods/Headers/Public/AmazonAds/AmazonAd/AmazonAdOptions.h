@@ -1,0 +1,1 @@
+../../../../AmazonAds/AmazonAd.framework/Versions/A/Headers/AmazonAdOptions.h

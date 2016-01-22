@@ -1,0 +1,1 @@
+../../../PubNative/PubNativeLibrary/PubNativeLibrary/Components/Feed/Native/PNNativeTableViewCell.h
