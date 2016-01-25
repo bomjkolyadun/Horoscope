@@ -13,9 +13,14 @@
 		0AB208CA1C5296B600DB4243 /* Horoscope.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AB208B81C5296B600DB4243 /* Horoscope.xcdatamodeld */; };
 		0AB208CC1C5296B600DB4243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB208BC1C5296B600DB4243 /* Assets.xcassets */; };
 		0AB208CD1C5296B600DB4243 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB208BF1C5296B600DB4243 /* AppDelegate.swift */; };
-		0AB208CE1C5296B600DB4243 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB208C31C5296B600DB4243 /* ViewController.swift */; };
 		0AB208CF1C5296B600DB4243 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB208C51C5296B600DB4243 /* LaunchScreen.storyboard */; };
 		0AB208D01C5296B600DB4243 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB208C71C5296B600DB4243 /* Main.storyboard */; };
+		0ABB05491C55ABBC006C9B18 /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB05481C55ABBC006C9B18 /* GenderViewController.swift */; };
+		0ABB054B1C55AE75006C9B18 /* ZodiacCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB054A1C55AE75006C9B18 /* ZodiacCollectionViewController.swift */; };
+		0ABB054D1C55AF15006C9B18 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB054C1C55AF15006C9B18 /* Types.swift */; };
+		0ABB054F1C55B360006C9B18 /* ZodiacCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB054E1C55B360006C9B18 /* ZodiacCell.swift */; };
+		0ABB05511C55C9F1006C9B18 /* SignDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB05501C55C9F1006C9B18 /* SignDetailViewController.swift */; };
+		0ADDCE7F1C55A361009BC031 /* ZoomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADDCE7E1C55A361009BC031 /* ZoomButton.swift */; };
 		24785F3D97C66AA0CBEFA31D /* libPods-HoroscopeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B5B717379EDB889102BC85 /* libPods-HoroscopeUITests.a */; };
 		920808DE4CE1B492AD5D0A38 /* libPods-HoroscopeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AD0322D4ABF5A5253E6C20 /* libPods-HoroscopeTests.a */; };
 		CA8846C487B918F7D01D60AF /* libPods-Horoscope.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5E7FF0C71E660BFE3DA2A5 /* libPods-Horoscope.a */; };
@@ -54,9 +59,14 @@
 		0AB208BC1C5296B600DB4243 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AB208BF1C5296B600DB4243 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AB208C01C5296B600DB4243 /* Horoscope-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Horoscope-Bridging-Header.h"; sourceTree = "<group>"; };
-		0AB208C31C5296B600DB4243 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0AB208C61C5296B600DB4243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AB208C81C5296B600DB4243 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0ABB05481C55ABBC006C9B18 /* GenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
+		0ABB054A1C55AE75006C9B18 /* ZodiacCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZodiacCollectionViewController.swift; sourceTree = "<group>"; };
+		0ABB054C1C55AF15006C9B18 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		0ABB054E1C55B360006C9B18 /* ZodiacCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZodiacCell.swift; sourceTree = "<group>"; };
+		0ABB05501C55C9F1006C9B18 /* SignDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignDetailViewController.swift; sourceTree = "<group>"; };
+		0ADDCE7E1C55A361009BC031 /* ZoomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomButton.swift; sourceTree = "<group>"; };
 		207FC1C84AB5DB8374362949 /* Pods-HoroscopeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoroscopeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoroscopeTests/Pods-HoroscopeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		28A2F13A83B828C572E60298 /* Pods-Horoscope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Horoscope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Horoscope/Pods-Horoscope.debug.xcconfig"; sourceTree = "<group>"; };
 		48B5B717379EDB889102BC85 /* libPods-HoroscopeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HoroscopeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +176,7 @@
 		0AB208BD1C5296B600DB4243 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0ADDCE7D1C55A33E009BC031 /* Views */,
 				0AB208BE1C5296B600DB4243 /* App */,
 				0AB208C11C5296B600DB4243 /* Model */,
 				0AB208C21C5296B600DB4243 /* ViewControllers */,
@@ -185,6 +196,7 @@
 		0AB208C11C5296B600DB4243 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0ABB054C1C55AF15006C9B18 /* Types.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,7 +204,9 @@
 		0AB208C21C5296B600DB4243 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0AB208C31C5296B600DB4243 /* ViewController.swift */,
+				0ABB05481C55ABBC006C9B18 /* GenderViewController.swift */,
+				0ABB054A1C55AE75006C9B18 /* ZodiacCollectionViewController.swift */,
+				0ABB05501C55C9F1006C9B18 /* SignDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -204,6 +218,15 @@
 				0AB208C71C5296B600DB4243 /* Main.storyboard */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		0ADDCE7D1C55A33E009BC031 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0ADDCE7E1C55A361009BC031 /* ZoomButton.swift */,
+				0ABB054E1C55B360006C9B18 /* ZodiacCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7B056A38392D747D7AEA09FA /* Frameworks */ = {
@@ -507,9 +530,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AB208CE1C5296B600DB4243 /* ViewController.swift in Sources */,
+				0ADDCE7F1C55A361009BC031 /* ZoomButton.swift in Sources */,
+				0ABB05491C55ABBC006C9B18 /* GenderViewController.swift in Sources */,
 				0AB208CD1C5296B600DB4243 /* AppDelegate.swift in Sources */,
+				0ABB054D1C55AF15006C9B18 /* Types.swift in Sources */,
+				0ABB05511C55C9F1006C9B18 /* SignDetailViewController.swift in Sources */,
 				0AB208CA1C5296B600DB4243 /* Horoscope.xcdatamodeld in Sources */,
+				0ABB054B1C55AE75006C9B18 /* ZodiacCollectionViewController.swift in Sources */,
+				0ABB054F1C55B360006C9B18 /* ZodiacCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

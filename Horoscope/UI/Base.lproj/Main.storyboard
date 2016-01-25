@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JBY-sq-su5">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="hhh-8J-R0b">
+            <objects>
+                <navigationController id="JBY-sq-su5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qgs-Bi-f5v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9zR-CM-udQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Qd-mu-UbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-610.5" y="339"/>
+        </scene>
+        <!--Gender View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GenderViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +34,441 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i3T-OV-DsM">
+                                <rect key="frame" x="180" y="183" width="240" height="234"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oie-cn-aDA" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                        <rect key="frame" x="80" y="20" width="80" height="80"/>
+                                        <state key="normal" image="male"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="60" y="24" width="120" height="120"/>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="rtY-Nv-DBd" kind="show" id="Q7D-0H-NGF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbV-Fv-wZu" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                        <rect key="frame" x="80" y="133" width="80" height="81"/>
+                                        <state key="normal" image="female"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="60" y="152" width="120" height="120"/>
+                                        </variation>
+                                        <connections>
+                                            <segue destination="rtY-Nv-DBd" kind="show" id="UZr-fi-mdn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="8SI-mb-DhQ"/>
+                                    <constraint firstAttribute="width" constant="240" id="UeK-5d-rlV"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Oie-cn-aDA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="Oie-cn-aDA"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="i3T-OV-DsM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Q2d-Cf-Jyc"/>
+                            <constraint firstItem="i3T-OV-DsM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mEN-k7-J3O"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="YC2-OX-XRu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="387" y="339"/>
+        </scene>
+        <!--Zodiac Collection View Controller-->
+        <scene sceneID="Ukz-Q0-lXi">
+            <objects>
+                <collectionViewController id="rtY-Nv-DBd" customClass="ZodiacCollectionViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" id="JB4-H6-5ry">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="GpA-iY-BOa">
+                            <size key="itemSize" width="101" height="101"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZodiacCell" id="UXF-Mg-ib9" customClass="ZodiacCell" customModule="Horoscope" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="101" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oyf-4L-AVP" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                            <connections>
+                                                <action selector="buttonAction:" destination="UXF-Mg-ib9" eventType="touchUpInside" id="8po-TM-yyv"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="Oyf-4L-AVP" firstAttribute="bottom" secondItem="UXF-Mg-ib9" secondAttribute="bottomMargin" id="9VM-Tq-IHn"/>
+                                    <constraint firstItem="Oyf-4L-AVP" firstAttribute="top" secondItem="UXF-Mg-ib9" secondAttribute="topMargin" id="aCf-zc-Xxh"/>
+                                    <constraint firstItem="Oyf-4L-AVP" firstAttribute="leading" secondItem="UXF-Mg-ib9" secondAttribute="leadingMargin" id="lRC-9z-Dur"/>
+                                    <constraint firstItem="Oyf-4L-AVP" firstAttribute="trailing" secondItem="UXF-Mg-ib9" secondAttribute="trailingMargin" id="qL2-D7-zY3"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Oyf-4L-AVP"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="9VM-Tq-IHn"/>
+                                        <exclude reference="aCf-zc-Xxh"/>
+                                        <exclude reference="lRC-9z-Dur"/>
+                                        <exclude reference="qL2-D7-zY3"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="Oyf-4L-AVP"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="9VM-Tq-IHn"/>
+                                        <include reference="aCf-zc-Xxh"/>
+                                        <include reference="lRC-9z-Dur"/>
+                                        <include reference="qL2-D7-zY3"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="button" destination="Oyf-4L-AVP" id="hyl-SP-9Cm"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="rtY-Nv-DBd" id="Oxc-9s-sSS"/>
+                            <outlet property="delegate" destination="rtY-Nv-DBd" id="na9-WA-PNi"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <segue destination="WfU-KT-EhJ" kind="show" identifier="detailSegue" id="kHK-0r-OaY"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgx-af-XcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1266" y="339"/>
+        </scene>
+        <!--Sign Detail View Controller-->
+        <scene sceneID="yNn-w1-KRB">
+            <objects>
+                <tableViewController id="WfU-KT-EhJ" customClass="SignDetailViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="L3E-iU-zHa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <containerView key="tableFooterView" opaque="NO" contentMode="scaleToFill" id="M9G-8d-Lrt">
+                            <rect key="frame" x="0.0" y="136" width="600" height="128"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <connections>
+                                <segue destination="McI-ob-bgo" kind="embed" id="gFQ-EH-8lJ"/>
+                            </connections>
+                        </containerView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lln-nF-6p0">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lln-nF-6p0" id="Cwf-Q0-xnE">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WfU-KT-EhJ" id="5tb-sU-m8j"/>
+                            <outlet property="delegate" destination="WfU-KT-EhJ" id="o9J-ZT-pMz"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FO0-53-aOG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986" y="339"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qiR-CK-GFT">
+            <objects>
+                <viewController id="McI-ob-bgo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kqR-NY-Ihy"/>
+                        <viewControllerLayoutGuide type="bottom" id="XW4-sA-ldx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZmQ-WC-5pH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4L-Q0-zv4" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="ZbI-20-x52"/>
+                                    <constraint firstAttribute="height" constant="33" id="wKG-dW-daH"/>
+                                </constraints>
+                                <state key="normal" image="carier"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ZbI-20-x52"/>
+                                        <exclude reference="wKG-dW-daH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ZbI-20-x52"/>
+                                        <include reference="wKG-dW-daH"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="933-mG-Auz" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="FXH-SR-yBe"/>
+                                    <constraint firstAttribute="height" constant="33" id="SWY-Wh-3Q8"/>
+                                </constraints>
+                                <state key="normal" image="love"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FXH-SR-yBe"/>
+                                        <exclude reference="SWY-Wh-3Q8"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="FXH-SR-yBe"/>
+                                        <include reference="SWY-Wh-3Q8"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlR-OL-b3J" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="3Aa-vs-Z5Y"/>
+                                    <constraint firstAttribute="height" constant="33" id="uTk-dJ-bp0"/>
+                                </constraints>
+                                <state key="normal" image="family"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3Aa-vs-Z5Y"/>
+                                        <exclude reference="uTk-dJ-bp0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="3Aa-vs-Z5Y"/>
+                                        <include reference="uTk-dJ-bp0"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZ4-gg-IoA" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="3ZL-zs-M5m"/>
+                                    <constraint firstAttribute="height" constant="33" id="NFf-n7-bcf"/>
+                                </constraints>
+                                <state key="normal" image="carier"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3ZL-zs-M5m"/>
+                                        <exclude reference="NFf-n7-bcf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="3ZL-zs-M5m"/>
+                                        <include reference="NFf-n7-bcf"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMM-kB-Nib" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="pt9-ub-ng9"/>
+                                    <constraint firstAttribute="height" constant="33" id="yoW-s8-GoK"/>
+                                </constraints>
+                                <state key="normal" image="money"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pt9-ub-ng9"/>
+                                        <exclude reference="yoW-s8-GoK"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="pt9-ub-ng9"/>
+                                        <include reference="yoW-s8-GoK"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uX8-re-aYb" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="B9i-99-NB3"/>
+                                    <constraint firstAttribute="width" constant="99" id="oQX-RL-PPy"/>
+                                </constraints>
+                                <state key="normal" image="teen"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="B9i-99-NB3"/>
+                                        <exclude reference="oQX-RL-PPy"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="B9i-99-NB3"/>
+                                        <include reference="oQX-RL-PPy"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsD-Ts-4Od" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="6Gw-mk-lcv"/>
+                                    <constraint firstAttribute="width" constant="99" id="SRp-hq-dBh"/>
+                                </constraints>
+                                <state key="normal" image="carier"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6Gw-mk-lcv"/>
+                                        <exclude reference="SRp-hq-dBh"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="6Gw-mk-lcv"/>
+                                        <include reference="SRp-hq-dBh"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkq-18-fci" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="VPm-JD-7nT"/>
+                                    <constraint firstAttribute="height" constant="33" id="Wts-HM-yH6"/>
+                                </constraints>
+                                <state key="normal" image="health"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VPm-JD-7nT"/>
+                                        <exclude reference="Wts-HM-yH6"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="VPm-JD-7nT"/>
+                                        <include reference="Wts-HM-yH6"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="933-mG-Auz" firstAttribute="leading" secondItem="ZmQ-WC-5pH" secondAttribute="leadingMargin" constant="-10" id="0VT-Cz-GCP"/>
+                            <constraint firstItem="mlR-OL-b3J" firstAttribute="top" secondItem="933-mG-Auz" secondAttribute="bottom" constant="6" id="5Nn-6g-USB"/>
+                            <constraint firstItem="NZ4-gg-IoA" firstAttribute="leading" secondItem="ZmQ-WC-5pH" secondAttribute="leadingMargin" constant="-10" id="88B-s9-jRP"/>
+                            <constraint firstItem="uX8-re-aYb" firstAttribute="top" secondItem="Vkq-18-fci" secondAttribute="bottom" constant="6" id="9iv-IW-SPy"/>
+                            <constraint firstItem="mlR-OL-b3J" firstAttribute="leading" secondItem="ZmQ-WC-5pH" secondAttribute="leadingMargin" constant="-10" id="9pZ-Ic-Uol"/>
+                            <constraint firstItem="QsD-Ts-4Od" firstAttribute="trailing" secondItem="ZmQ-WC-5pH" secondAttribute="trailingMargin" id="CDO-PN-gTf"/>
+                            <constraint firstItem="uX8-re-aYb" firstAttribute="trailing" secondItem="ZmQ-WC-5pH" secondAttribute="trailingMargin" id="D0u-Bd-JR2"/>
+                            <constraint firstItem="r4L-Q0-zv4" firstAttribute="leading" secondItem="ZmQ-WC-5pH" secondAttribute="leadingMargin" constant="-10" id="HRY-3d-fCe"/>
+                            <constraint firstItem="r4L-Q0-zv4" firstAttribute="top" secondItem="ZmQ-WC-5pH" secondAttribute="topMargin" constant="20" id="IJq-uz-cp0"/>
+                            <constraint firstItem="933-mG-Auz" firstAttribute="top" secondItem="r4L-Q0-zv4" secondAttribute="bottom" constant="6" id="J2F-FR-Xsy"/>
+                            <constraint firstItem="QsD-Ts-4Od" firstAttribute="top" secondItem="uX8-re-aYb" secondAttribute="bottom" constant="8" id="J9c-Fe-v4k"/>
+                            <constraint firstItem="bMM-kB-Nib" firstAttribute="top" secondItem="ZmQ-WC-5pH" secondAttribute="topMargin" constant="20" id="OEH-R9-kWq"/>
+                            <constraint firstItem="Vkq-18-fci" firstAttribute="trailing" secondItem="ZmQ-WC-5pH" secondAttribute="trailingMargin" id="WQ0-VL-MBq"/>
+                            <constraint firstItem="bMM-kB-Nib" firstAttribute="trailing" secondItem="ZmQ-WC-5pH" secondAttribute="trailingMargin" id="muo-4m-ygh"/>
+                            <constraint firstItem="Vkq-18-fci" firstAttribute="top" secondItem="bMM-kB-Nib" secondAttribute="bottom" constant="8" id="rhu-Y2-xMN"/>
+                            <constraint firstItem="NZ4-gg-IoA" firstAttribute="top" secondItem="mlR-OL-b3J" secondAttribute="bottom" constant="8" id="tK3-hV-R06"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="r4L-Q0-zv4"/>
+                                <exclude reference="933-mG-Auz"/>
+                                <exclude reference="mlR-OL-b3J"/>
+                                <exclude reference="NZ4-gg-IoA"/>
+                                <exclude reference="bMM-kB-Nib"/>
+                                <exclude reference="uX8-re-aYb"/>
+                                <exclude reference="QsD-Ts-4Od"/>
+                                <exclude reference="Vkq-18-fci"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0VT-Cz-GCP"/>
+                                <exclude reference="J2F-FR-Xsy"/>
+                                <exclude reference="88B-s9-jRP"/>
+                                <exclude reference="tK3-hV-R06"/>
+                                <exclude reference="CDO-PN-gTf"/>
+                                <exclude reference="J9c-Fe-v4k"/>
+                                <exclude reference="WQ0-VL-MBq"/>
+                                <exclude reference="rhu-Y2-xMN"/>
+                                <exclude reference="OEH-R9-kWq"/>
+                                <exclude reference="muo-4m-ygh"/>
+                                <exclude reference="5Nn-6g-USB"/>
+                                <exclude reference="9pZ-Ic-Uol"/>
+                                <exclude reference="HRY-3d-fCe"/>
+                                <exclude reference="IJq-uz-cp0"/>
+                                <exclude reference="9iv-IW-SPy"/>
+                                <exclude reference="D0u-Bd-JR2"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="r4L-Q0-zv4"/>
+                                <include reference="933-mG-Auz"/>
+                                <include reference="mlR-OL-b3J"/>
+                                <include reference="NZ4-gg-IoA"/>
+                                <include reference="bMM-kB-Nib"/>
+                                <include reference="uX8-re-aYb"/>
+                                <include reference="QsD-Ts-4Od"/>
+                                <include reference="Vkq-18-fci"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0VT-Cz-GCP"/>
+                                <include reference="J2F-FR-Xsy"/>
+                                <include reference="88B-s9-jRP"/>
+                                <include reference="tK3-hV-R06"/>
+                                <include reference="CDO-PN-gTf"/>
+                                <include reference="J9c-Fe-v4k"/>
+                                <include reference="WQ0-VL-MBq"/>
+                                <include reference="rhu-Y2-xMN"/>
+                                <include reference="OEH-R9-kWq"/>
+                                <include reference="muo-4m-ygh"/>
+                                <include reference="5Nn-6g-USB"/>
+                                <include reference="9pZ-Ic-Uol"/>
+                                <include reference="HRY-3d-fCe"/>
+                                <include reference="IJq-uz-cp0"/>
+                                <include reference="9iv-IW-SPy"/>
+                                <include reference="D0u-Bd-JR2"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6jj-f8-Upx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2742" y="339"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="carier" width="99" height="33"/>
+        <image name="family" width="99" height="33"/>
+        <image name="female" width="80" height="81"/>
+        <image name="health" width="99" height="33"/>
+        <image name="love" width="99" height="33"/>
+        <image name="male" width="80" height="80"/>
+        <image name="money" width="99" height="33"/>
+        <image name="teen" width="99" height="33"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="UZr-fi-mdn"/>
+    </inferredMetricsTieBreakers>
 </document>
