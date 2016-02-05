@@ -29,6 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let adTypes: AppodealAdType = [.Interstitial, .SkippableVideo];
         Appodeal.initializeWithApiKey("9eb1f824562fda547ee3b5136b6141d73cad54871643b4a5", types: adTypes);
+
+        //UIBarButtonItem.appearance().setBackButtonBackgroundImage(UIImage(), forState: .Normal, barMetrics: .Default)
+
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         return true
     }
 

@@ -20,4 +20,18 @@ class ZodiacCell: UICollectionViewCell {
     @IBAction func buttonAction(sender: UIButton) {
         self.delegate?.cellDidButtonAction(self, sender: sender)
     }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        let cellButton = ZoomButton(type: .Custom)
+        cellButton.frame = self.contentView.bounds
+        cellButton.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        cellButton.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.contentView.addSubview(cellButton)
+        button = cellButton
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }

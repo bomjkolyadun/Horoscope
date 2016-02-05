@@ -9,81 +9,51 @@
 import UIKit
 
 private let reuseIdentifier = "ZodiacCell"
-private let padding : CGFloat = 10.0
-private let numberOfItems : CGFloat = 3.0
-
 private let detailSegue = "detailSegue"
 
-class ZodiacCollectionViewController: UICollectionViewController, ZodiacCellDelegate {
+class ZodiacCollectionViewController: HoroscopeCollectionViewController {
 
     var gender : Gender
-    var images : [String] = ["z1", "z2", "z3", "z4", "z5", "z6", "z7", "z8", "z9", "z10", "z11", "z12"]
-    var pickedItem : Int
+    var pickedItem : HoroSign?
 
     required init?(coder aDecoder: NSCoder) {
         gender = .Male
-        pickedItem = -1
         super.init(coder: aDecoder)
+        images = ["z1", "z2", "z3", "z4", "z5", "z6", "z7", "z8", "z9", "z10", "z11", "z12"]
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        //self.collectionView!.registerClass(ZodiacCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        let flowLayout: UICollectionViewFlowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.itemSize = CGSizeMake(100, 100)
     }
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == detailSegue && pickedItem >= 0) {
+        if (segue.identifier == detailSegue && pickedItem != nil) {
             let destination = segue.destinationViewController as! SignDetailViewController
-            destination.signIdentifier = pickedItem
+            destination.horoSign = pickedItem!
+            destination.horoType = .General
+            destination.horoDay = .Today
         }
     }
 
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
-    }
-
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ZodiacCell
-        let index = indexPath.item
-        let image = UIImage.init(named: images[index])
-        cell.button.setImage(image, forState: .Normal)
-        cell.button.tag = index
-        cell.delegate = self
-        return cell
-    }
-
-    // MARK: UICollectionViewDelegate
-
-    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize
-    {
-        return CGSizeMake(floor((self.view.frame.width - padding)/numberOfItems), floor((self.view.frame.width - padding)/numberOfItems))
-    }
-
-    func cellDidButtonAction(cell: ZodiacCell, sender: UIButton) {
-        pickedItem = sender.tag
+    override func cellDidButtonAction(cell: ZodiacCell, sender: UIButton) {
+        pickedItem = HoroSign(rawValue: sender.tag)
         self.performSegueWithIdentifier(detailSegue, sender: cell)
     }
+
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+//        // Add inset to the collection view if there are not enough cells to fill the width.
+//        let cellSpacing: CGFloat = (collectionViewLayout as! UICollectionViewFlowLayout).minimumLineSpacing
+//        let cellWidth: CGFloat = (collectionViewLayout as! UICollectionViewFlowLayout).itemSize.width
+//        let cellCount: Int = collectionView.numberOfItemsInSection(section)
+//        var inset: CGFloat = (collectionView.bounds.size.width - (CGFloat(cellCount) * (cellWidth + cellSpacing))) * 0.5
+//        inset = max(inset, 0.0)
+//        return UIEdgeInsetsMake(0.0, inset, 0.0, 0.0)
+//    }
+
 
 }
