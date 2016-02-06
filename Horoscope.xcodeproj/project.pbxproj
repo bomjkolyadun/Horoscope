@@ -15,6 +15,7 @@
 		0A71347F1C654AA60027C4D6 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A71347E1C654AA60027C4D6 /* UIButtonExtension.swift */; };
 		0A7134841C6560170027C4D6 /* Horoscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7134831C6560170027C4D6 /* Horoscope.swift */; };
 		0A7134861C656FE40027C4D6 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7134851C656FE40027C4D6 /* NotificationManager.swift */; };
+		0A7134881C660B100027C4D6 /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7134871C660B100027C4D6 /* AdManager.swift */; };
 		0AB2089A1C52794900DB4243 /* HoroscopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB208991C52794900DB4243 /* HoroscopeTests.swift */; };
 		0AB208A51C52794900DB4243 /* HoroscopeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB208A41C52794900DB4243 /* HoroscopeUITests.swift */; };
 		0AB208C91C5296B600DB4243 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AB208B71C5296B600DB4243 /* GoogleService-Info.plist */; };
@@ -63,6 +64,7 @@
 		0A71347E1C654AA60027C4D6 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		0A7134831C6560170027C4D6 /* Horoscope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Horoscope.swift; sourceTree = "<group>"; };
 		0A7134851C656FE40027C4D6 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		0A7134871C660B100027C4D6 /* AdManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
 		0AB2087E1C52794800DB4243 /* Horoscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Horoscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB208951C52794900DB4243 /* HoroscopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoroscopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB208991C52794900DB4243 /* HoroscopeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeTests.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				0A71347E1C654AA60027C4D6 /* UIButtonExtension.swift */,
 				0A7134851C656FE40027C4D6 /* NotificationManager.swift */,
+				0A7134871C660B100027C4D6 /* AdManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A7134881C660B100027C4D6 /* AdManager.swift in Sources */,
 				0A7134771C6537870027C4D6 /* VerticallyCenteredLayout.swift in Sources */,
 				0A7134861C656FE40027C4D6 /* NotificationManager.swift in Sources */,
 				0A71347A1C6547700027C4D6 /* RequestWrapper.swift in Sources */,

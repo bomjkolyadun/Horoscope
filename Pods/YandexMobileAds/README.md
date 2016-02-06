@@ -11,12 +11,12 @@ EULA is available at [EULA website] [LICENSE]
 1. Install [CocoaPods] to manage project dependencies, if you haven't done it yet.
 
 2. Go to one of example projects:
-- /Examples/BannerExample
-- /Examples/InterstitialExample
-- /Examples/NativeExample
-- /Examples/VideoExample
-- /Examples/AdMobAdaptersExample
-- /Examples/MoPubAdaptersExample
+  * /Examples/BannerExample
+  * /Examples/InterstitialExample
+  * /Examples/NativeExample
+  * /Examples/VideoExample
+  * /Examples/AdMobAdaptersExample
+  * /Examples/MoPubAdaptersExample
 
 3. Install dependencies:
 ```pod install```
@@ -27,6 +27,7 @@ EULA is available at [EULA website] [LICENSE]
 
 ## App Transport Security
 Add the NSAppTransportSecurity exception to plist. NSAllowsArbitraryLoads exception should be added to plist in order ads to work correctly on devices with iOS 9:
+
 ![][ATS]
 
 ```xml

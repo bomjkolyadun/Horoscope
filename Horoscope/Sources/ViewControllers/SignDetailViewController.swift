@@ -74,6 +74,17 @@ class SignDetailViewController: UITableViewController, HoroPickerDelegate {
         }
     }
 
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if (self.isMovingFromParentViewController()){
+            guard let object = horoscope
+                else {return}
+            if (object.category != .General) {
+                AdManager.sharedInstance.showAdMaybe(self)
+            }
+        }
+    }
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

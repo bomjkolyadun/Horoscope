@@ -8,8 +8,8 @@ inhibit_all_warnings!
 target 'Horoscope' do
 
 	pod 'AFNetworking', '~> 2.6'
-	pod 'Google/Analytics', '~> 1.0.0'
-	pod 'Appodeal', '~> 0.8'
+	pod 'Google/Analytics', '~> 1.0'
+	pod 'Appodeal'
 	pod 'Fabric'
 	pod 'Crashlytics'
 	
