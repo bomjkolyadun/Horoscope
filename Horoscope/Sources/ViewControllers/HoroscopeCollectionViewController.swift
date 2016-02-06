@@ -50,7 +50,7 @@ class HoroscopeCollectionViewController: UICollectionViewController, ZodiacCellD
         let flowLayout: UICollectionViewFlowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         let numberOfCellsW: CGFloat = self.view.frame.size.width / flowLayout.itemSize.width
         let edgeInsetsW: CGFloat = (self.view.frame.size.width - (numberOfCellsW * flowLayout.itemSize.width)) / (numberOfCellsW + 1)
-        return UIEdgeInsetsMake(0, edgeInsetsW, 0, edgeInsetsW)
+        return UIEdgeInsetsMake(0, edgeInsetsW + 10, 0, edgeInsetsW + 10)
     }
 
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {

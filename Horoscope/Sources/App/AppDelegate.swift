@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let adTypes: AppodealAdType = [.Interstitial, .RewardedVideo];
         Appodeal.initializeWithApiKey("9eb1f824562fda547ee3b5136b6141d73cad54871643b4a5", types: adTypes);
 
-        UIApplication.sharedApplication().applicationIconBadgeNumber = 0;
+        handleNotifications()
 
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().translucent = false
@@ -41,9 +41,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func handleNotifications() {
+        let notificationSettings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes:[.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+    }
+
 
     func applicationDidEnterBackground(application: UIApplication) {
         NotificationManager.sharedInstance.generateNotifications()
     }
-}
 
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0;
+    }
+
+
+
+}

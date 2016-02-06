@@ -23,16 +23,14 @@ class SignDetailViewController: UITableViewController, HoroPickerDelegate {
             guard let object = horoscope
                 else {return}
             NSNotificationCenter.defaultCenter().removeObserver(self, name: kModelChangeNotification, object: object)
+            NSNotificationCenter.defaultCenter().removeObserver(self, name: kModelChangeErrorNotification, object: object)
         }
 
         didSet {
             guard let object = horoscope
                 else {return}
-            NSNotificationCenter.defaultCenter().addObserver(
-                self,
-                selector: "updateData:",
-                name: kModelChangeNotification,
-                object: object)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateData:", name:kModelChangeNotification, object: object)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateError:", name:kModelChangeErrorNotification, object: object)
             object.update()
         }
     }
@@ -42,6 +40,18 @@ class SignDetailViewController: UITableViewController, HoroPickerDelegate {
         let firstRow = NSIndexPath(forRow: 0, inSection: 0);
         self.tableView.reloadRowsAtIndexPaths([firstRow], withRowAnimation: .Automatic)
         self.tableView.endUpdates()
+    }
+
+    func updateError(note: NSNotification) {
+        if let error = note.userInfo?[kModelErrorKey] as? NSError{
+            let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Cancel, handler: { (alertAction: UIAlertAction) -> Void in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+
+        }
     }
 
     override func awakeFromNib() {
@@ -106,11 +116,3 @@ class SignDetailViewController: UITableViewController, HoroPickerDelegate {
         }
     }
 }
-
-//let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: .Alert)
-//let action = UIAlertAction(title: "OK", style: .Cancel, handler: { (alertAction: UIAlertAction) -> Void in
-//    self.dismissViewControllerAnimated(true, completion: nil)
-//})
-//alert.addAction(action)
-//self.presentViewController(alert, animated: true, completion: nil)
-

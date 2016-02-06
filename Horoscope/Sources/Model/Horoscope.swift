@@ -10,7 +10,7 @@ import Foundation
 
 internal let kModelChangeNotification = "modelChangeNotification"
 internal let kModelChangeErrorNotification = "modelChangeErrorNotification"
-internal let kErrorKey = "errorKey"
+internal let kModelErrorKey = "errorKey"
 
 class Horoscope {
 
@@ -35,7 +35,7 @@ class Horoscope {
 
     func notifyChange(error: NSError?) {
         if let err = error {
-            NSNotificationCenter.defaultCenter().postNotificationName(kModelChangeNotification, object: self, userInfo: [kErrorKey : err])
+            NSNotificationCenter.defaultCenter().postNotificationName(kModelChangeErrorNotification, object: self, userInfo: [kModelErrorKey : err])
         } else {
             NSNotificationCenter.defaultCenter().postNotificationName(kModelChangeNotification, object: self, userInfo: nil)
         }
