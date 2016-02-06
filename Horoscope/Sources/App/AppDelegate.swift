@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func handleNotifications() {
         let notificationSettings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes:[.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0;
     }
 
 
@@ -51,8 +52,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationManager.sharedInstance.generateNotifications()
     }
 
+    func applicationWillTerminate(application: UIApplication) {
+         NotificationManager.sharedInstance.generateNotifications()
+    }
+
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
-        UIApplication.sharedApplication().applicationIconBadgeNumber = 0;
     }
 
 

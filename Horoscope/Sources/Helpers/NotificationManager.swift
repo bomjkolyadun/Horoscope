@@ -37,18 +37,19 @@ class NotificationManager {
         let componentsForReferenceDate: NSDateComponents = calendar.components(([.Day, .Year, .Month, .Hour]), fromDate: date)
         componentsForReferenceDate.hour = 8
         componentsForReferenceDate.minute = 10
-        componentsForReferenceDate.day--
         let referenceDate: NSDate = calendar.dateFromComponents(componentsForReferenceDate)!
         let length = UInt32(texts.count)
-        for index in 0...63 {
+        for index in 1...64 {
             let text = texts[Int(arc4random_uniform(length))]
-            let components = calendar.components(([.Hour, .Minute,]), fromDate: referenceDate)
+            let components = NSDateComponents()
             components.minute = Int(arc4random_uniform(59))
             components.day = index
-            if let randomDate = calendar.dateByAddingComponents(components, toDate: date, options: .MatchNextTime) {
+            if let randomDate = calendar.dateByAddingComponents(components, toDate: referenceDate, options: .MatchNextTime) {
                 scheduleNotification(randomDate, text: text)
             }
         }
+        let eventArray = UIApplication.sharedApplication().scheduledLocalNotifications!;
+        print(eventArray)
         scheduled = true
     }
 }
