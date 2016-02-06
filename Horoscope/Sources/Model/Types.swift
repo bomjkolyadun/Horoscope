@@ -8,20 +8,20 @@
 
 import Foundation
 
-enum HoroDay : Int {
-    case Today = 1
-    case Tomorrow
-    case Year
+enum HoroType : String {
+    case Today = "today"
+    case Tomorrow = "tomorrow"
+    case Year = "yearly"
 }
 
 enum Gender : Int {
-    case Male = 0
+    case Male = 1
     case Female
 }
 
 
-enum HoroType : Int {
-    case General = 0
+enum HoroCategory : Int {
+    case General = 1
     case Carrier
     case Money
     case Love
@@ -31,7 +31,7 @@ enum HoroType : Int {
 }
 
 enum HoroSign : Int {
-    case Aries = 0
+    case Aries = 1
     case Taurus
     case Gemini
     case Cancer

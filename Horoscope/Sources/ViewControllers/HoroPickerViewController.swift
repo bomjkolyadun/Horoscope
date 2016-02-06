@@ -9,17 +9,17 @@
 import UIKit
 
 protocol HoroPickerDelegate {
-    func horoPicker(picker: HoroPickerViewController, didPickItem item: HoroType, day: HoroDay)
+    func horoPicker(picker: HoroPickerViewController, didPickItem item: HoroCategory, day: HoroType)
 }
 
 class HoroPickerViewController: UIViewController {
 
-    internal var day : HoroDay {
+    internal var day : HoroType {
         didSet {
             self.updateButtons()
         }
     }
-    internal var type : HoroType = .General
+    internal var type : HoroCategory = .General
     
     internal var delegate: HoroPickerDelegate?
 
@@ -40,34 +40,34 @@ class HoroPickerViewController: UIViewController {
         switch day {
         case .Tomorrow :
             firstButton?.setImage(UIImage(named: "today"), forState: .Normal)
-            firstButton.tag = HoroDay.Today.rawValue
+            firstButton.stringTag = HoroType.Today.rawValue
             secondButton?.setImage(UIImage(named: "year"), forState: .Normal)
-            secondButton.tag = HoroDay.Year.rawValue
+            secondButton.stringTag = HoroType.Year.rawValue
         case .Today :
             firstButton?.setImage(UIImage(named: "tomorrow"), forState: .Normal)
-            firstButton.tag = HoroDay.Tomorrow.rawValue
+            firstButton.stringTag = HoroType.Tomorrow.rawValue
             secondButton?.setImage(UIImage(named: "year"), forState: .Normal)
-            secondButton.tag = HoroDay.Year.rawValue
+            secondButton.stringTag = HoroType.Year.rawValue
         default :
             firstButton?.setImage(UIImage(named: "today"), forState: .Normal)
-            firstButton.tag = HoroDay.Today.rawValue
+            firstButton.stringTag = HoroType.Today.rawValue
             secondButton?.setImage(UIImage(named: "tomorrow"), forState: .Normal)
-            secondButton.tag = HoroDay.Tomorrow.rawValue
+            secondButton.stringTag = HoroType.Tomorrow.rawValue
         }
     }
 
     @IBAction func typeAction(sender: AnyObject) {
         if let senderView = sender as? UIView {
             let tag = senderView.tag
-            let newType = HoroType(rawValue: tag)!
+            let newType = HoroCategory(rawValue: tag)!
             self.delegate?.horoPicker(self, didPickItem: newType, day: day)
         }
     }
 
     @IBAction func dateAction(sender: AnyObject) {
-        if let senderView = sender as? UIView {
-            let tag = senderView.tag
-            let newDay = HoroDay(rawValue: tag)!
+        if let senderView = sender as? UIButton {
+            let tag = senderView.stringTag
+            let newDay = HoroType(rawValue: tag!)!
             self.delegate?.horoPicker(self, didPickItem: type, day: newDay)
         }
     }

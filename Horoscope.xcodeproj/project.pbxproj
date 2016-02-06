@@ -11,10 +11,13 @@
 		0A7134721C6512F80027C4D6 /* HoroscopeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7134711C6512F80027C4D6 /* HoroscopeCollectionViewController.swift */; };
 		0A7134751C6519220027C4D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A7134731C6519220027C4D6 /* Main.storyboard */; };
 		0A7134771C6537870027C4D6 /* VerticallyCenteredLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7134761C6537860027C4D6 /* VerticallyCenteredLayout.swift */; };
+		0A71347A1C6547700027C4D6 /* RequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7134791C6547700027C4D6 /* RequestWrapper.swift */; };
+		0A71347F1C654AA60027C4D6 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A71347E1C654AA60027C4D6 /* UIButtonExtension.swift */; };
+		0A7134841C6560170027C4D6 /* Horoscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7134831C6560170027C4D6 /* Horoscope.swift */; };
+		0A7134861C656FE40027C4D6 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7134851C656FE40027C4D6 /* NotificationManager.swift */; };
 		0AB2089A1C52794900DB4243 /* HoroscopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB208991C52794900DB4243 /* HoroscopeTests.swift */; };
 		0AB208A51C52794900DB4243 /* HoroscopeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB208A41C52794900DB4243 /* HoroscopeUITests.swift */; };
 		0AB208C91C5296B600DB4243 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AB208B71C5296B600DB4243 /* GoogleService-Info.plist */; };
-		0AB208CA1C5296B600DB4243 /* Horoscope.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AB208B81C5296B600DB4243 /* Horoscope.xcdatamodeld */; };
 		0AB208CC1C5296B600DB4243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB208BC1C5296B600DB4243 /* Assets.xcassets */; };
 		0AB208CD1C5296B600DB4243 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB208BF1C5296B600DB4243 /* AppDelegate.swift */; };
 		0AB208CF1C5296B600DB4243 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB208C51C5296B600DB4243 /* LaunchScreen.storyboard */; };
@@ -56,6 +59,10 @@
 		0A7134711C6512F80027C4D6 /* HoroscopeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoroscopeCollectionViewController.swift; sourceTree = "<group>"; };
 		0A7134741C6519220027C4D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A7134761C6537860027C4D6 /* VerticallyCenteredLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredLayout.swift; sourceTree = "<group>"; };
+		0A7134791C6547700027C4D6 /* RequestWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestWrapper.swift; sourceTree = "<group>"; };
+		0A71347E1C654AA60027C4D6 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		0A7134831C6560170027C4D6 /* Horoscope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Horoscope.swift; sourceTree = "<group>"; };
+		0A7134851C656FE40027C4D6 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		0AB2087E1C52794800DB4243 /* Horoscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Horoscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB208951C52794900DB4243 /* HoroscopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoroscopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB208991C52794900DB4243 /* HoroscopeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeTests.swift; sourceTree = "<group>"; };
@@ -64,7 +71,6 @@
 		0AB208A41C52794900DB4243 /* HoroscopeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopeUITests.swift; sourceTree = "<group>"; };
 		0AB208A61C52794900DB4243 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AB208B71C5296B600DB4243 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0AB208B91C5296B600DB4243 /* Horoscope.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Horoscope.xcdatamodel; sourceTree = "<group>"; };
 		0AB208BA1C5296B600DB4243 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AB208BC1C5296B600DB4243 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0AB208BF1C5296B600DB4243 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +122,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A7134781C65474D0027C4D6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0A7134791C6547700027C4D6 /* RequestWrapper.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0A71347B1C654A740027C4D6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0A71347E1C654AA60027C4D6 /* UIButtonExtension.swift */,
+				0A7134851C656FE40027C4D6 /* NotificationManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		0AB208751C52794800DB4243 = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				0AB208B71C5296B600DB4243 /* GoogleService-Info.plist */,
-				0AB208B81C5296B600DB4243 /* Horoscope.xcdatamodeld */,
 				0AB208BA1C5296B600DB4243 /* Info.plist */,
 			);
 			path = Configs;
@@ -188,6 +210,8 @@
 		0AB208BD1C5296B600DB4243 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				0A71347B1C654A740027C4D6 /* Helpers */,
+				0A7134781C65474D0027C4D6 /* Network */,
 				0AF183021C64EF2700D620ED /* Segues */,
 				0ADDCE7D1C55A33E009BC031 /* Views */,
 				0AB208BE1C5296B600DB4243 /* App */,
@@ -210,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				0ABB054C1C55AF15006C9B18 /* Types.swift */,
+				0A7134831C6560170027C4D6 /* Horoscope.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -557,14 +582,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A7134771C6537870027C4D6 /* VerticallyCenteredLayout.swift in Sources */,
+				0A7134861C656FE40027C4D6 /* NotificationManager.swift in Sources */,
+				0A71347A1C6547700027C4D6 /* RequestWrapper.swift in Sources */,
 				0ADDCE7F1C55A361009BC031 /* ZoomButton.swift in Sources */,
 				0AF182FF1C63823900D620ED /* TouchCollectionView.swift in Sources */,
 				0A7134721C6512F80027C4D6 /* HoroscopeCollectionViewController.swift in Sources */,
 				0AF183011C63906700D620ED /* HoroPickerViewController.swift in Sources */,
 				0AB208CD1C5296B600DB4243 /* AppDelegate.swift in Sources */,
+				0A71347F1C654AA60027C4D6 /* UIButtonExtension.swift in Sources */,
 				0ABB054D1C55AF15006C9B18 /* Types.swift in Sources */,
 				0ABB05511C55C9F1006C9B18 /* SignDetailViewController.swift in Sources */,
-				0AB208CA1C5296B600DB4243 /* Horoscope.xcdatamodeld in Sources */,
+				0A7134841C6560170027C4D6 /* Horoscope.swift in Sources */,
 				0ABB054B1C55AE75006C9B18 /* ZodiacCollectionViewController.swift in Sources */,
 				0AF183041C64EF3D00D620ED /* EmbedSegue.swift in Sources */,
 				0A7134701C65127A0027C4D6 /* GenderCollectionViewController.swift in Sources */,
@@ -833,19 +861,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0AB208B81C5296B600DB4243 /* Horoscope.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0AB208B91C5296B600DB4243 /* Horoscope.xcdatamodel */,
-			);
-			currentVersion = 0AB208B91C5296B600DB4243 /* Horoscope.xcdatamodel */;
-			path = Horoscope.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 0AB208761C52794800DB4243 /* Project object */;
 }

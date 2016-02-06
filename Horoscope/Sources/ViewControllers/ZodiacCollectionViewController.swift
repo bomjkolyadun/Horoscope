@@ -30,13 +30,11 @@ class ZodiacCollectionViewController: HoroscopeCollectionViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == detailSegue && pickedItem != nil) {
             let destination = segue.destinationViewController as! SignDetailViewController
-            destination.horoSign = pickedItem!
-            destination.horoType = .General
-            destination.horoDay = .Today
+            let horoscopeObject = Horoscope(aGender: gender, aCategory: HoroCategory.General, aZodiac: pickedItem!, aType: HoroType.Today)
+            destination.horoscope = horoscopeObject
         }
     }
 
@@ -44,16 +42,5 @@ class ZodiacCollectionViewController: HoroscopeCollectionViewController {
         pickedItem = HoroSign(rawValue: sender.tag)
         self.performSegueWithIdentifier(detailSegue, sender: cell)
     }
-
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-//        // Add inset to the collection view if there are not enough cells to fill the width.
-//        let cellSpacing: CGFloat = (collectionViewLayout as! UICollectionViewFlowLayout).minimumLineSpacing
-//        let cellWidth: CGFloat = (collectionViewLayout as! UICollectionViewFlowLayout).itemSize.width
-//        let cellCount: Int = collectionView.numberOfItemsInSection(section)
-//        var inset: CGFloat = (collectionView.bounds.size.width - (CGFloat(cellCount) * (cellWidth + cellSpacing))) * 0.5
-//        inset = max(inset, 0.0)
-//        return UIEdgeInsetsMake(0.0, inset, 0.0, 0.0)
-//    }
-
 
 }

@@ -32,17 +32,12 @@ class HoroscopeCollectionViewController: UICollectionViewController, ZodiacCellD
         return self.images.count
     }
 
-//    func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, sizeForItemAtIndexPath indexPath: NSIndexPath!) -> CGSize
-//    {
-//        return CGSizeMake(100, 100)
-//    }
-
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ZodiacCell
         let index = indexPath.item
         let image = UIImage.init(named: images[index])
         cell.button.setImage(image, forState: .Normal)
-        cell.button.tag = index
+        cell.button.tag = index + 1
         cell.delegate = self
         return cell
     }

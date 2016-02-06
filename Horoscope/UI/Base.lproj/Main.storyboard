@@ -24,7 +24,7 @@
         <!--Gender Collection View Controller-->
         <scene sceneID="xZL-wJ-1aQ">
             <objects>
-                <collectionViewController id="P8H-uV-OeL" customClass="GenderCollectionViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController extendedLayoutIncludesOpaqueBars="YES" id="P8H-uV-OeL" customClass="GenderCollectionViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" id="MRS-Gm-gIa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,12 +50,17 @@
         <!--Zodiac Collection View Controller-->
         <scene sceneID="Ukz-Q0-lXi">
             <objects>
-                <collectionViewController id="rtY-Nv-DBd" customClass="ZodiacCollectionViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" id="JB4-H6-5ry" customClass="TouchCollectionView" customModule="Horoscope" customModuleProvider="target">
+                <collectionViewController automaticallyAdjustsScrollViewInsets="NO" id="rtY-Nv-DBd" customClass="ZodiacCollectionViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="JB4-H6-5ry" customClass="TouchCollectionView" customModule="Horoscope" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewLayout key="collectionViewLayout" id="F8v-N5-E3b" customClass="VerticallyCenteredLayout" customModule="Horoscope" customModuleProvider="target"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hI7-Wh-bTu">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
                         <cells/>
                         <connections>
                             <outlet property="dataSource" destination="rtY-Nv-DBd" id="Oxc-9s-sSS"/>
@@ -160,7 +165,7 @@
                                             <action selector="dateAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="h9B-fd-KVg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JW3-YI-pjI" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JW3-YI-pjI" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
                                         <rect key="frame" x="147" y="0.0" width="132" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="45P-IP-H45"/>
@@ -171,7 +176,7 @@
                                             <action selector="typeAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="x58-aK-0sw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTc-Gt-toG" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTc-Gt-toG" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
                                         <rect key="frame" x="1" y="59" width="132" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="132" id="B5b-Mh-f7A"/>
@@ -182,7 +187,7 @@
                                             <action selector="typeAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="SHm-yg-19L"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brG-Im-dLW" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brG-Im-dLW" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
                                         <rect key="frame" x="1" y="0.0" width="132" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="HUI-c1-Ll8"/>
@@ -193,7 +198,7 @@
                                             <action selector="typeAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="3F3-tU-KUn"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKi-Zf-pFg" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKi-Zf-pFg" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
                                         <rect key="frame" x="147" y="59" width="132" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="YMu-pq-exr"/>
@@ -204,7 +209,7 @@
                                             <action selector="typeAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="79Y-bc-QTT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wt-LZ-CEe" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wt-LZ-CEe" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
                                         <rect key="frame" x="147" y="118" width="132" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="132" id="mn3-eJ-RgQ"/>
@@ -215,7 +220,7 @@
                                             <action selector="typeAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="P9j-Is-XEa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQ2-j3-kPc" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQ2-j3-kPc" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
                                         <rect key="frame" x="1" y="118" width="132" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Jxe-7f-tv5"/>
