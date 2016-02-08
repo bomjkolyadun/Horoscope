@@ -19,6 +19,7 @@ class GenderCollectionViewController: HoroscopeCollectionViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        configureLayout(traitCollection)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
@@ -48,5 +49,17 @@ class GenderCollectionViewController: HoroscopeCollectionViewController {
         } else {
             layout.numberOfItemsPerLine = 1
         }
+    }
+
+    override func layoutCells(transform: CGAffineTransform) {
+        if self.traitCollection.userInterfaceIdiom == .Pad {
+            let layout =  self.collectionViewLayout as! KRLCollectionViewGridLayout
+            if view.bounds.size.width > view.bounds.size.height {
+                layout.numberOfItemsPerLine = 2
+            } else {
+                layout.numberOfItemsPerLine = 1
+            }
+        }
+        super.layoutCells(transform)
     }
 }

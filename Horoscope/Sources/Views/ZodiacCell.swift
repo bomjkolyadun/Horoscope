@@ -24,6 +24,7 @@ class ZodiacCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         let cellButton = ZoomButton(type: .Custom)
+        cellButton.adjustsImageWhenHighlighted = false
         cellButton.frame = self.contentView.bounds
         cellButton.imageView?.contentMode = .ScaleAspectFit
         cellButton.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]

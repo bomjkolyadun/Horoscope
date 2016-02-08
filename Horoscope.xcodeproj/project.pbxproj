@@ -31,6 +31,7 @@
 		0AF182FF1C63823900D620ED /* TouchCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF182FE1C63823900D620ED /* TouchCollectionView.swift */; };
 		0AF183011C63906700D620ED /* HoroPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF183001C63906700D620ED /* HoroPickerViewController.swift */; };
 		0AF183041C64EF3D00D620ED /* EmbedSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF183031C64EF3D00D620ED /* EmbedSegue.swift */; };
+		0AF6785C1C68B54C005D18BD /* PickerColelctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF6785B1C68B54C005D18BD /* PickerColelctionViewController.swift */; };
 		24785F3D97C66AA0CBEFA31D /* libPods-HoroscopeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B5B717379EDB889102BC85 /* libPods-HoroscopeUITests.a */; };
 		920808DE4CE1B492AD5D0A38 /* libPods-HoroscopeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AD0322D4ABF5A5253E6C20 /* libPods-HoroscopeTests.a */; };
 		CA8846C487B918F7D01D60AF /* libPods-Horoscope.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5E7FF0C71E660BFE3DA2A5 /* libPods-Horoscope.a */; };
@@ -87,6 +88,7 @@
 		0AF182FE1C63823900D620ED /* TouchCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchCollectionView.swift; sourceTree = "<group>"; };
 		0AF183001C63906700D620ED /* HoroPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoroPickerViewController.swift; sourceTree = "<group>"; };
 		0AF183031C64EF3D00D620ED /* EmbedSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbedSegue.swift; sourceTree = "<group>"; };
+		0AF6785B1C68B54C005D18BD /* PickerColelctionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerColelctionViewController.swift; sourceTree = "<group>"; };
 		207FC1C84AB5DB8374362949 /* Pods-HoroscopeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoroscopeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoroscopeTests/Pods-HoroscopeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		28A2F13A83B828C572E60298 /* Pods-Horoscope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Horoscope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Horoscope/Pods-Horoscope.debug.xcconfig"; sourceTree = "<group>"; };
 		48B5B717379EDB889102BC85 /* libPods-HoroscopeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HoroscopeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +251,7 @@
 				0ABB054A1C55AE75006C9B18 /* ZodiacCollectionViewController.swift */,
 				0ABB05501C55C9F1006C9B18 /* SignDetailViewController.swift */,
 				0AF183001C63906700D620ED /* HoroPickerViewController.swift */,
+				0AF6785B1C68B54C005D18BD /* PickerColelctionViewController.swift */,
 				0A71346F1C65127A0027C4D6 /* GenderCollectionViewController.swift */,
 				0A7134711C6512F80027C4D6 /* HoroscopeCollectionViewController.swift */,
 			);
@@ -597,6 +600,7 @@
 				0ABB054D1C55AF15006C9B18 /* Types.swift in Sources */,
 				0ABB05511C55C9F1006C9B18 /* SignDetailViewController.swift in Sources */,
 				0A7134841C6560170027C4D6 /* Horoscope.swift in Sources */,
+				0AF6785C1C68B54C005D18BD /* PickerColelctionViewController.swift in Sources */,
 				0ABB054B1C55AE75006C9B18 /* ZodiacCollectionViewController.swift in Sources */,
 				0AF183041C64EF3D00D620ED /* EmbedSegue.swift in Sources */,
 				0A7134701C65127A0027C4D6 /* GenderCollectionViewController.swift in Sources */,
@@ -745,6 +749,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Horoscope/Configs/Info.plist;
@@ -764,6 +769,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Horoscope/Configs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

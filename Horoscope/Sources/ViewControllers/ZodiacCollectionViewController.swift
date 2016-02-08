@@ -34,11 +34,6 @@ class ZodiacCollectionViewController: HoroscopeCollectionViewController {
         }
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.layoutCells(self.view.transform)
-    }
-
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -68,6 +63,18 @@ class ZodiacCollectionViewController: HoroscopeCollectionViewController {
         } else {
             layout.numberOfItemsPerLine = 3
         }
+    }
+
+    override func layoutCells(transform: CGAffineTransform) {
+        if self.traitCollection.userInterfaceIdiom == .Pad {
+            let layout =  self.collectionViewLayout as! KRLCollectionViewGridLayout
+            if view.bounds.size.width > view.bounds.size.height {
+                layout.numberOfItemsPerLine = 4
+            } else {
+                layout.numberOfItemsPerLine = 3
+            }
+        }
+        super.layoutCells(transform)
     }
 
 }

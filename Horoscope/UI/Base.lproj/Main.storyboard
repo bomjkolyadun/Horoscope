@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10089" systemVersion="15E33e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JBY-sq-su5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E33e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JBY-sq-su5">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10072.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -113,7 +113,7 @@
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oW8-sf-T6i">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                     <connections>
-                                        <segue destination="McI-ob-bgo" kind="embed" identifier="embedSegue" id="2bq-3b-6xr"/>
+                                        <segue destination="4CO-kX-J2c" kind="embed" identifier="embedSegue" id="Qig-9M-6tg"/>
                                     </connections>
                                 </containerView>
                             </subviews>
@@ -168,11 +168,11 @@
                         <viewControllerLayoutGuide type="bottom" id="XW4-sA-ldx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZmQ-WC-5pH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfq-oD-2kk">
-                                <rect key="frame" x="160" y="20" width="279" height="221"/>
+                                <rect key="frame" x="160" y="170" width="279" height="221"/>
                                 <subviews>
                                     <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKq-dA-CnT" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
                                         <rect key="frame" x="1" y="177" width="132" height="44"/>
@@ -299,7 +299,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jj-f8-Upx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2849" y="339"/>
+            <point key="canvasLocation" x="2649" y="-461"/>
+        </scene>
+        <!--Picker Colelction View Controller-->
+        <scene sceneID="Uag-Yh-bSY">
+            <objects>
+                <collectionViewController automaticallyAdjustsScrollViewInsets="NO" id="4CO-kX-J2c" customClass="PickerColelctionViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" id="0GQ-v4-2od" customClass="TouchCollectionView" customModule="Horoscope" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewLayout key="collectionViewLayout" id="GBl-f6-J5B" customClass="KRLCollectionViewGridLayout"/>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="4CO-kX-J2c" id="E7X-yq-oa3"/>
+                            <outlet property="delegate" destination="4CO-kX-J2c" id="Q5m-cO-5Li"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Vw-nG-dpy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2874" y="339"/>
         </scene>
     </scenes>
     <resources>

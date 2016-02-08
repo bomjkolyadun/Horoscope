@@ -36,4 +36,13 @@ class ZoomButton: UIButton {
         }
     }
 
+    override func cancelTrackingWithEvent(event: UIEvent?) {
+        UIView.animateWithDuration(0.1, delay: 0.0, options: .BeginFromCurrentState, animations: { () -> Void in
+            self.transform = CGAffineTransformIdentity
+            }, completion: { (finished : Bool) -> Void in
+                if (!finished) {
+                    self.transform = CGAffineTransformIdentity
+                }
+        })
+    }
 }

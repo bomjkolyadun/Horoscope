@@ -22,8 +22,9 @@ class AdManager {
 
     func showAdMaybe(viewController: UIViewController!) {
         if seed() < probability {
-            let result = Appodeal.showAd(AppodealShowStyle.RewardedVideo, rootViewController: viewController)
-            if !result {
+            if Appodeal.isReadyForShowWithStyle(AppodealShowStyle.RewardedVideo) {
+                Appodeal.showAd(AppodealShowStyle.RewardedVideo, rootViewController: viewController)
+            } else {
                 Appodeal.showAd(AppodealShowStyle.Interstitial, rootViewController: viewController)
             }
         }

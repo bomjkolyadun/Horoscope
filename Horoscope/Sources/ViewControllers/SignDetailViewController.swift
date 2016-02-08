@@ -15,9 +15,9 @@ private let kTypeTitles : [HoroCategory: String] = [.Carrier : "Карьерны
 private let kDayTitles : [HoroType: String] = [.Today : "сегодня", .Tomorrow : "завтра", .Year : "год "]
 private let kSignTitles: [HoroSign: String] = [.Aries : "Овен", .Taurus : "Телец", .Gemini : "Близнецы", .Cancer : "Рак", .Leo : "Лев", .Virgo : "Дева", .Libra : "Весы", .Scorpio : "Скорпион", .Sagittarius : "Стрелец", .Capricorn : "Козерог", .Aquarius : "Водолей", .Pisces : "Рыбы"]
 
-class SignDetailViewController: UITableViewController, HoroPickerDelegate {
+class SignDetailViewController: UITableViewController, PickerDelegate {
 
-    var horoPickerController : HoroPickerViewController?
+    var horoPickerController : PickerColelctionViewController?
     var horoscope : Horoscope? {
         willSet {
             guard let object = horoscope
@@ -43,14 +43,17 @@ class SignDetailViewController: UITableViewController, HoroPickerDelegate {
     }
 
     func updateError(note: NSNotification) {
-        if let error = note.userInfo?[kModelErrorKey] as? NSError{
+        if let _ = horoscope?.text {
+
+        } else {
+            guard let error = note.userInfo?[kModelErrorKey] as? NSError
+                else {return}
             let alert = UIAlertController(title: "Ошибка", message: error.localizedDescription, preferredStyle: .Alert)
             let action = UIAlertAction(title: "OK", style: .Cancel, handler: { (alertAction: UIAlertAction) -> Void in
                 self.dismissViewControllerAnimated(true, completion: nil)
             })
             alert.addAction(action)
             self.presentViewController(alert, animated: true, completion: nil)
-
         }
     }
 
@@ -64,8 +67,8 @@ class SignDetailViewController: UITableViewController, HoroPickerDelegate {
         super.viewWillAppear(animated)
         guard let object = horoscope
             else {return}
-        self.horoPickerController?.day = object.type
-        self.horoPickerController?.type = object.category
+        self.horoPickerController?.type = object.type
+        self.horoPickerController?.category = object.category
         if (object.category == .General) {
             self.title = kSignTitles[object.zodiac]! + " на " + kDayTitles[object.type]!
         } else {
@@ -97,26 +100,27 @@ class SignDetailViewController: UITableViewController, HoroPickerDelegate {
 
         let cell = tableView.dequeueReusableCellWithIdentifier(kTextCellIdentifier, forIndexPath: indexPath)
         if self.traitCollection.userInterfaceIdiom == .Pad {
-            cell.layoutMargins = UIEdgeInsetsMake(0.0, 100.0, 0.0, 100.0)
+            cell.layoutMargins = UIEdgeInsetsMake(30.0, 100.0, 30.0, 100.0)
+            cell.textLabel?.font = UIFont.systemFontOfSize(24.0)
         }
         if let text = horoscope?.text {
             cell.textLabel?.text = text
         } else {
-            cell.textLabel?.text = "Загрузка"
+            cell.textLabel?.text = "Загрузка..."
         }
         return cell
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == kEmbedSegue {
-            if let pickerController = segue.destinationViewController as? HoroPickerViewController {
+            if let pickerController = segue.destinationViewController as? PickerColelctionViewController {
                 pickerController.delegate = self
                 horoPickerController = pickerController
             }
         }
     }
 
-    func horoPicker(picker: HoroPickerViewController, didPickItem item: HoroCategory, day : HoroType) {
+    func picker(picker: PickerColelctionViewController, didPickCategory item: HoroCategory, type day: HoroType) {
         guard let horoscopeObject = horoscope
             else {return}
 
@@ -135,4 +139,5 @@ class SignDetailViewController: UITableViewController, HoroPickerDelegate {
     override func prefersStatusBarHidden() -> Bool {
         return false;
     }
+    
 }
