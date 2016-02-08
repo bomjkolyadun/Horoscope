@@ -21,12 +21,19 @@ class HoroscopeCollectionViewController: UICollectionViewController, ZodiacCellD
         self.clearsSelectionOnViewWillAppear = true
         self.collectionView!.registerClass(ZodiacCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView!.backgroundColor = UIColor(red: 35.0/255.0, green: 35.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        let layout =  self.collectionViewLayout as! KRLCollectionViewGridLayout
+        layout.interitemSpacing = 0.0
+        layout.lineSpacing = 0.0
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.layoutCells(self.view.transform)
     }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.images.count
@@ -46,15 +53,23 @@ class HoroscopeCollectionViewController: UICollectionViewController, ZodiacCellD
         
     }
 
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        let flowLayout: UICollectionViewFlowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-        let numberOfCellsW: CGFloat = self.view.frame.size.width / flowLayout.itemSize.width
-        let edgeInsetsW: CGFloat = (self.view.frame.size.width - (numberOfCellsW * flowLayout.itemSize.width)) / (numberOfCellsW + 1)
-        return UIEdgeInsetsMake(0, edgeInsetsW + 10, 0, edgeInsetsW + 10)
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-        self.collectionView!.collectionViewLayout.invalidateLayout()
+    override func prefersStatusBarHidden() -> Bool {
+        return false;
+    }
+
+    func layoutCells(transform : CGAffineTransform) {
+
+        guard let collectionView = self.collectionView
+            else { return }
+        let size = CGRectApplyAffineTransform(collectionView.frame, transform).size
+        let layout =  self.collectionViewLayout as! KRLCollectionViewGridLayout
+        let count = self.images.count
+        let itemsInRow = layout.numberOfItemsPerLine
+        let rows = count / itemsInRow + count % itemsInRow
+        layout.aspectRatio = size.width / size.height * CGFloat(rows)/CGFloat(itemsInRow)
     }
 }

@@ -5,3 +5,4 @@
 #import <AFNetworking/AFNetworking.h>
 #import <Google/Analytics.h>
 #import <Appodeal/Appodeal.h>
+#import <KRLCollectionViewGridLayout.h>

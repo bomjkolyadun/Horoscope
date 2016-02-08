@@ -10,7 +10,6 @@
 		0A7134701C65127A0027C4D6 /* GenderCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A71346F1C65127A0027C4D6 /* GenderCollectionViewController.swift */; };
 		0A7134721C6512F80027C4D6 /* HoroscopeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7134711C6512F80027C4D6 /* HoroscopeCollectionViewController.swift */; };
 		0A7134751C6519220027C4D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A7134731C6519220027C4D6 /* Main.storyboard */; };
-		0A7134771C6537870027C4D6 /* VerticallyCenteredLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7134761C6537860027C4D6 /* VerticallyCenteredLayout.swift */; };
 		0A71347A1C6547700027C4D6 /* RequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7134791C6547700027C4D6 /* RequestWrapper.swift */; };
 		0A71347F1C654AA60027C4D6 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A71347E1C654AA60027C4D6 /* UIButtonExtension.swift */; };
 		0A7134841C6560170027C4D6 /* Horoscope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7134831C6560170027C4D6 /* Horoscope.swift */; };
@@ -26,6 +25,7 @@
 		0ABB054D1C55AF15006C9B18 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB054C1C55AF15006C9B18 /* Types.swift */; };
 		0ABB054F1C55B360006C9B18 /* ZodiacCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB054E1C55B360006C9B18 /* ZodiacCell.swift */; };
 		0ABB05511C55C9F1006C9B18 /* SignDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB05501C55C9F1006C9B18 /* SignDetailViewController.swift */; };
+		0AD5E5641C6667AC00FD73FC /* UINavigarionControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD5E5631C6667AC00FD73FC /* UINavigarionControllerExtension.swift */; };
 		0ADDCE7F1C55A361009BC031 /* ZoomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADDCE7E1C55A361009BC031 /* ZoomButton.swift */; };
 		0AF182FD1C637D4500D620ED /* TouchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF182FC1C637D4500D620ED /* TouchTableView.swift */; };
 		0AF182FF1C63823900D620ED /* TouchCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF182FE1C63823900D620ED /* TouchCollectionView.swift */; };
@@ -59,7 +59,6 @@
 		0A71346F1C65127A0027C4D6 /* GenderCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderCollectionViewController.swift; sourceTree = "<group>"; };
 		0A7134711C6512F80027C4D6 /* HoroscopeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoroscopeCollectionViewController.swift; sourceTree = "<group>"; };
 		0A7134741C6519220027C4D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0A7134761C6537860027C4D6 /* VerticallyCenteredLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredLayout.swift; sourceTree = "<group>"; };
 		0A7134791C6547700027C4D6 /* RequestWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestWrapper.swift; sourceTree = "<group>"; };
 		0A71347E1C654AA60027C4D6 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		0A7134831C6560170027C4D6 /* Horoscope.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Horoscope.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		0ABB054C1C55AF15006C9B18 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		0ABB054E1C55B360006C9B18 /* ZodiacCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZodiacCell.swift; sourceTree = "<group>"; };
 		0ABB05501C55C9F1006C9B18 /* SignDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignDetailViewController.swift; sourceTree = "<group>"; };
+		0AD5E5631C6667AC00FD73FC /* UINavigarionControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigarionControllerExtension.swift; sourceTree = "<group>"; };
 		0ADDCE7E1C55A361009BC031 /* ZoomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomButton.swift; sourceTree = "<group>"; };
 		0AF182FC1C637D4500D620ED /* TouchTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchTableView.swift; sourceTree = "<group>"; };
 		0AF182FE1C63823900D620ED /* TouchCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchCollectionView.swift; sourceTree = "<group>"; };
@@ -136,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				0A71347E1C654AA60027C4D6 /* UIButtonExtension.swift */,
+				0AD5E5631C6667AC00FD73FC /* UINavigarionControllerExtension.swift */,
 				0A7134851C656FE40027C4D6 /* NotificationManager.swift */,
 				0A7134871C660B100027C4D6 /* AdManager.swift */,
 			);
@@ -270,7 +271,6 @@
 				0ABB054E1C55B360006C9B18 /* ZodiacCell.swift */,
 				0AF182FC1C637D4500D620ED /* TouchTableView.swift */,
 				0AF182FE1C63823900D620ED /* TouchCollectionView.swift */,
-				0A7134761C6537860027C4D6 /* VerticallyCenteredLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -585,8 +585,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A7134881C660B100027C4D6 /* AdManager.swift in Sources */,
-				0A7134771C6537870027C4D6 /* VerticallyCenteredLayout.swift in Sources */,
 				0A7134861C656FE40027C4D6 /* NotificationManager.swift in Sources */,
+				0AD5E5641C6667AC00FD73FC /* UINavigarionControllerExtension.swift in Sources */,
 				0A71347A1C6547700027C4D6 /* RequestWrapper.swift in Sources */,
 				0ADDCE7F1C55A361009BC031 /* ZoomButton.swift in Sources */,
 				0AF182FF1C63823900D620ED /* TouchCollectionView.swift in Sources */,

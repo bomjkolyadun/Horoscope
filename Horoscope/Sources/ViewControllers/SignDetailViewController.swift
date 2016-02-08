@@ -74,13 +74,13 @@ class SignDetailViewController: UITableViewController, HoroPickerDelegate {
         }
     }
 
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
         if (self.isMovingFromParentViewController()){
             guard let object = horoscope
                 else {return}
             if (object.category != .General) {
-                AdManager.sharedInstance.showAdMaybe(self)
+                AdManager.sharedInstance.showAdMaybe(self.navigationController)
             }
         }
     }
@@ -96,12 +96,13 @@ class SignDetailViewController: UITableViewController, HoroPickerDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cell = tableView.dequeueReusableCellWithIdentifier(kTextCellIdentifier, forIndexPath: indexPath)
-
+        if self.traitCollection.userInterfaceIdiom == .Pad {
+            cell.layoutMargins = UIEdgeInsetsMake(0.0, 100.0, 0.0, 100.0)
+        }
         if let text = horoscope?.text {
             cell.textLabel?.text = text
         } else {
             cell.textLabel?.text = "Загрузка"
-
         }
         return cell
     }
@@ -125,5 +126,13 @@ class SignDetailViewController: UITableViewController, HoroPickerDelegate {
             detailController.horoscope = horoscopeObject
             self.navigationController?.pushViewController(detailController, animated: true)
         }
+    }
+
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+
+    override func prefersStatusBarHidden() -> Bool {
+        return false;
     }
 }

@@ -17,24 +17,9 @@ class GenderCollectionViewController: HoroscopeCollectionViewController {
         images = ["male", "female"]
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let flowLayout: UICollectionViewFlowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.itemSize = CGSizeMake(230, 160)
-    }
-
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if (isBeingPresented() || isMovingToParentViewController()) {
-            navigationController?.setNavigationBarHidden(true, animated: false)
-        }
-    }
-
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        if (isBeingDismissed() || isMovingFromParentViewController()) {
-            navigationController?.setNavigationBarHidden(false, animated: false)
-        }
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -49,4 +34,19 @@ class GenderCollectionViewController: HoroscopeCollectionViewController {
         self.performSegueWithIdentifier(kZodiacSegueIdentifier, sender: cell)
     }
 
+    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
+        self.configureLayout(newCollection)
+    }
+
+    func configureLayout(newCollection: UITraitCollection) {
+        let layout =  self.collectionViewLayout as! KRLCollectionViewGridLayout
+        if newCollection.horizontalSizeClass == .Regular {
+            layout.numberOfItemsPerLine = 2
+        } else if newCollection.horizontalSizeClass == .Compact && newCollection.verticalSizeClass == .Compact {
+            layout.numberOfItemsPerLine = 2
+        } else {
+            layout.numberOfItemsPerLine = 1
+        }
+    }
 }

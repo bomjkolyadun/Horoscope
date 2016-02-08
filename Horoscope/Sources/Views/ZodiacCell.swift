@@ -25,6 +25,7 @@ class ZodiacCell: UICollectionViewCell {
         super.init(frame: frame)
         let cellButton = ZoomButton(type: .Custom)
         cellButton.frame = self.contentView.bounds
+        cellButton.imageView?.contentMode = .ScaleAspectFit
         cellButton.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         cellButton.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         self.contentView.addSubview(cellButton)

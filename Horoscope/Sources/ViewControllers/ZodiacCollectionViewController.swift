@@ -24,8 +24,19 @@ class ZodiacCollectionViewController: HoroscopeCollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let flowLayout: UICollectionViewFlowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.itemSize = CGSizeMake(100, 100)
+        self.configureLayout(self.traitCollection)
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if (self.isMovingToParentViewController() || self.isBeingPresented()) {
+            navigationController?.setNavigationBarHidden(false, animated: animated)
+        }
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.layoutCells(self.view.transform)
     }
 
     // MARK: - Navigation
@@ -41,6 +52,22 @@ class ZodiacCollectionViewController: HoroscopeCollectionViewController {
     override func cellDidButtonAction(cell: ZodiacCell, sender: UIButton) {
         pickedItem = HoroSign(rawValue: sender.tag)
         self.performSegueWithIdentifier(detailSegue, sender: cell)
+    }
+
+    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
+        self.configureLayout(newCollection)
+    }
+
+    func configureLayout(newCollection: UITraitCollection) {
+        let layout =  self.collectionViewLayout as! KRLCollectionViewGridLayout
+        if newCollection.horizontalSizeClass == .Regular {
+            layout.numberOfItemsPerLine = 4
+        } else if newCollection.horizontalSizeClass == .Compact && newCollection.verticalSizeClass == .Compact {
+            layout.numberOfItemsPerLine = 4
+        } else {
+            layout.numberOfItemsPerLine = 3
+        }
     }
 
 }

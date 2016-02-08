@@ -97,6 +97,7 @@ PODS:
   - Haneke (1.0.2)
   - HCSStarRatingView (1.4.3)
   - InMobiSDK (5.0.2)
+  - KRLCollectionViewGridLayout (0.4.1)
   - KSCrash/no-arc (0.0.8)
   - KSCrash/Recording (0.0.8):
     - KSCrash/no-arc
@@ -141,6 +142,7 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - Google/Analytics (~> 1.0)
+  - KRLCollectionViewGridLayout
 
 SPEC CHECKSUMS:
   AdColony: a9859672fee49d9a81017d1fffa3133bf8538bd8
@@ -168,6 +170,7 @@ SPEC CHECKSUMS:
   Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
   HCSStarRatingView: bada6ae98258c3019531e0218030e2d5ad10765a
   InMobiSDK: 79f32a9a13625cd5dd5330d14ea38b08e309ccf3
+  KRLCollectionViewGridLayout: 6363dc7e3d91cf1f97e19ed20846764566659596
   KSCrash: a928da877b18f70c9ec3b50d4e8960271e2a10e5
   Mantle: 299966b00759634931699f69cb6a30b9239b944d
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
@@ -188,6 +191,6 @@ SPEC CHECKSUMS:
   YandexMobileAds: ab438f66e2121aa0ff05b243ce4c5d49a5950a4a
   YandexMobileMetrica: 5a4637b5c4473ff98b1ff266063ff6013f01d1fa
 
-PODFILE CHECKSUM: 210977fb67a554cd7b9656cfb05236b0beb437d3
+PODFILE CHECKSUM: 0dd464949a7e93f616213281e601d00f159ad2c0
 
 COCOAPODS: 1.0.0.beta.3

@@ -12,6 +12,7 @@ target 'Horoscope' do
 	pod 'Appodeal'
 	pod 'Fabric'
 	pod 'Crashlytics'
+    pod 'KRLCollectionViewGridLayout'
 	
 end
 

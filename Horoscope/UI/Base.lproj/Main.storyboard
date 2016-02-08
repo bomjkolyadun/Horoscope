@@ -8,8 +8,8 @@
         <!--Navigation Controller-->
         <scene sceneID="hhh-8J-R0b">
             <objects>
-                <navigationController id="JBY-sq-su5" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qgs-Bi-f5v">
+                <navigationController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="JBY-sq-su5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="qgs-Bi-f5v">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -24,12 +24,21 @@
         <!--Gender Collection View Controller-->
         <scene sceneID="xZL-wJ-1aQ">
             <objects>
-                <collectionViewController extendedLayoutIncludesOpaqueBars="YES" id="P8H-uV-OeL" customClass="GenderCollectionViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" id="MRS-Gm-gIa">
+                <collectionViewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="P8H-uV-OeL" customClass="GenderCollectionViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="MRS-Gm-gIa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewLayout key="collectionViewLayout" id="L8K-x3-TaT" customClass="VerticallyCenteredLayout" customModule="Horoscope" customModuleProvider="target"/>
+                        <collectionViewLayout key="collectionViewLayout" id="L8K-x3-TaT" customClass="KRLCollectionViewGridLayout">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </collectionViewLayout>
                         <cells/>
                         <connections>
                             <outlet property="dataSource" destination="P8H-uV-OeL" id="yy4-HH-6TP"/>
@@ -50,17 +59,27 @@
         <!--Zodiac Collection View Controller-->
         <scene sceneID="Ukz-Q0-lXi">
             <objects>
-                <collectionViewController automaticallyAdjustsScrollViewInsets="NO" id="rtY-Nv-DBd" customClass="ZodiacCollectionViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="rtY-Nv-DBd" customClass="ZodiacCollectionViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="JB4-H6-5ry" customClass="TouchCollectionView" customModule="Horoscope" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="KvQ-h9-SbK">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
+                        <collectionViewLayout key="collectionViewLayout" id="6HP-pQ-LzX" customClass="KRLCollectionViewGridLayout">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="numberOfItemsPerLine">
+                                    <integer key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="aspectRatio">
+                                    <real key="value" value="1.5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="interitemSpacing">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </collectionViewLayout>
                         <cells/>
                         <connections>
                             <outlet property="dataSource" destination="rtY-Nv-DBd" id="Oxc-9s-sSS"/>
