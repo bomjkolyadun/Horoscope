@@ -25,7 +25,7 @@ class PickerColelctionViewController: UICollectionViewController, ZodiacCellDele
     }
     internal var category : HoroCategory = .General
     internal var delegate: PickerDelegate?
-    private var categoryImages : [String] = ["family", "carier", "love", "health", "teen", "money"]
+    private var categoryImages : [String] = ["family", "carier", "love", "health", "teen", "money", "tomorrow", "year"]
     private var map: [String: HoroCategory] = ["carier" : .Carrier, "family" : .Family, "health" : .Health, "love" : .Love, "money" : .Money, "teen" : .Teen]
     private var typeImages : [String]?
 
@@ -42,11 +42,14 @@ class PickerColelctionViewController: UICollectionViewController, ZodiacCellDele
     func updateButtons() {
         switch type {
         case .Today:
-            typeImages = ["year", "tomorrow"]
+            categoryImages = ["family", "carier", "love", "health", "teen", "money", "tomorrow", "year"]
+            //typeImages = ["tomorrow", "year"]
         case .Tomorrow:
-            typeImages = ["year", "today"]
+            categoryImages = ["family", "carier", "love", "health", "teen", "money", "today", "year"]
+            //typeImages = ["today", "year"]
         default:
-            typeImages = ["tomorrow", "today"]
+            categoryImages = ["family", "carier", "love", "health", "teen", "money", "today", "tomorrow"]
+            //typeImages = ["today", "tomorrow"]
         }
         self.collectionView?.reloadData()
     }
@@ -56,7 +59,7 @@ class PickerColelctionViewController: UICollectionViewController, ZodiacCellDele
         let layout = self.collectionViewLayout as! KRLCollectionViewGridLayout
         if traitCollection.userInterfaceIdiom == .Phone {
             if traitCollection.verticalSizeClass == .Compact {
-                let inset : CGFloat = view.frame.width * 0.20
+                let inset : CGFloat = view.frame.width * 0.10
                 layout.sectionInset = UIEdgeInsetsMake(0.0, inset, 0.0, inset)
             } else {
                 let inset : CGFloat = view.frame.width
@@ -69,17 +72,17 @@ class PickerColelctionViewController: UICollectionViewController, ZodiacCellDele
     }
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
             return self.categoryImages.count
-        case 1:
-            guard let count = self.typeImages?.count
-                else {return 0}
-            return count
+//        case 1:
+//            guard let count = self.typeImages?.count
+//                else {return 0}
+//            return count
         default:
             return 0
         }
@@ -92,19 +95,30 @@ class PickerColelctionViewController: UICollectionViewController, ZodiacCellDele
             let name = categoryImages[index]
             let image = UIImage.init(named: categoryImages[index])
             cell.button.setImage(image, forState: .Normal)
-            cell.button.tag = (map[name]?.rawValue)!
-        } else {
-            let name = typeImages![index]
-            let image = UIImage.init(named: name)
-            cell.button.setImage(image, forState: .Normal)
+
             if name == "tomorrow" {
                 cell.button.stringTag = HoroType.Tomorrow.rawValue
             } else if name == "today"  {
                 cell.button.stringTag = HoroType.Today.rawValue
-            } else {
+            } else if name == "year"{
                 cell.button.stringTag = HoroType.Year.rawValue
+            } else {
+                cell.button.tag = (map[name]?.rawValue)!
             }
         }
+//
+//        } else {
+//            let name = typeImages![index]
+//            let image = UIImage.init(named: name)
+//            cell.button.setImage(image, forState: .Normal)
+//            if name == "tomorrow" {
+//                cell.button.stringTag = HoroType.Tomorrow.rawValue
+//            } else if name == "today"  {
+//                cell.button.stringTag = HoroType.Today.rawValue
+//            } else {
+//                cell.button.stringTag = HoroType.Year.rawValue
+//            }
+//        }
         cell.delegate = self
         return cell
     }
@@ -132,7 +146,7 @@ class PickerColelctionViewController: UICollectionViewController, ZodiacCellDele
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, numberItemsPerLineForSectionAtIndex section: Int) -> Int {
         if section == 0 {
             if traitCollection.verticalSizeClass == .Compact || traitCollection.userInterfaceIdiom == .Pad {
-                return 3
+                return 4
             } else {
                 return 2
             }

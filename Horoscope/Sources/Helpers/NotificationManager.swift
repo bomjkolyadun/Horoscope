@@ -48,8 +48,6 @@ class NotificationManager {
                 scheduleNotification(randomDate, text: text)
             }
         }
-        let eventArray = UIApplication.sharedApplication().scheduledLocalNotifications!;
-        print(eventArray)
         scheduled = true
     }
 }

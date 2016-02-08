@@ -107,11 +107,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="HAG-Mg-0mu">
-                            <rect key="frame" x="0.0" y="136" width="600" height="300"/>
+                            <rect key="frame" x="0.0" y="136" width="600" height="240"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oW8-sf-T6i">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                                     <connections>
                                         <segue destination="4CO-kX-J2c" kind="embed" identifier="embedSegue" id="Qig-9M-6tg"/>
                                     </connections>
@@ -159,154 +159,12 @@
             </objects>
             <point key="canvasLocation" x="2108" y="339"/>
         </scene>
-        <!--Horo Picker View Controller-->
-        <scene sceneID="qiR-CK-GFT">
-            <objects>
-                <viewController id="McI-ob-bgo" customClass="HoroPickerViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kqR-NY-Ihy"/>
-                        <viewControllerLayoutGuide type="bottom" id="XW4-sA-ldx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZmQ-WC-5pH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfq-oD-2kk">
-                                <rect key="frame" x="160" y="170" width="279" height="221"/>
-                                <subviews>
-                                    <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKq-dA-CnT" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="177" width="132" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="ClC-SV-9kN"/>
-                                            <constraint firstAttribute="width" constant="132" id="tLg-hc-6RP"/>
-                                        </constraints>
-                                        <state key="normal" image="tomorrow"/>
-                                        <connections>
-                                            <action selector="dateAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="h9B-fd-KVg"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JW3-YI-pjI" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
-                                        <rect key="frame" x="147" y="0.0" width="132" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="45P-IP-H45"/>
-                                            <constraint firstAttribute="width" constant="132" id="PtQ-cS-wi4"/>
-                                        </constraints>
-                                        <state key="normal" image="money"/>
-                                        <connections>
-                                            <action selector="typeAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="x58-aK-0sw"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTc-Gt-toG" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="59" width="132" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="132" id="B5b-Mh-f7A"/>
-                                            <constraint firstAttribute="height" constant="44" id="NMv-gt-wWZ"/>
-                                        </constraints>
-                                        <state key="normal" image="love"/>
-                                        <connections>
-                                            <action selector="typeAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="SHm-yg-19L"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brG-Im-dLW" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="0.0" width="132" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="HUI-c1-Ll8"/>
-                                            <constraint firstAttribute="width" constant="132" id="Kdg-NZ-ezO"/>
-                                        </constraints>
-                                        <state key="normal" image="carier"/>
-                                        <connections>
-                                            <action selector="typeAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="3F3-tU-KUn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKi-Zf-pFg" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
-                                        <rect key="frame" x="147" y="59" width="132" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="YMu-pq-exr"/>
-                                            <constraint firstAttribute="width" constant="132" id="mCR-bo-3g2"/>
-                                        </constraints>
-                                        <state key="normal" image="health"/>
-                                        <connections>
-                                            <action selector="typeAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="79Y-bc-QTT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Wt-LZ-CEe" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
-                                        <rect key="frame" x="147" y="118" width="132" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="132" id="mn3-eJ-RgQ"/>
-                                            <constraint firstAttribute="height" constant="44" id="ycN-4x-dV2"/>
-                                        </constraints>
-                                        <state key="normal" image="teen"/>
-                                        <connections>
-                                            <action selector="typeAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="P9j-Is-XEa"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQ2-j3-kPc" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="118" width="132" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="Jxe-7f-tv5"/>
-                                            <constraint firstAttribute="width" constant="132" id="WeE-0Z-2Jy"/>
-                                        </constraints>
-                                        <state key="normal" image="family"/>
-                                        <connections>
-                                            <action selector="typeAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="Y4I-2x-TBq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="-2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rx9-dx-wJA" customClass="ZoomButton" customModule="Horoscope" customModuleProvider="target">
-                                        <rect key="frame" x="147" y="177" width="132" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="132" id="GF6-TC-bRO"/>
-                                            <constraint firstAttribute="height" constant="44" id="aex-cG-8rf"/>
-                                        </constraints>
-                                        <state key="normal" image="year"/>
-                                        <connections>
-                                            <action selector="dateAction:" destination="McI-ob-bgo" eventType="touchUpInside" id="fE7-zs-av6"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="rx9-dx-wJA" firstAttribute="top" secondItem="8Wt-LZ-CEe" secondAttribute="bottom" constant="15" id="3MB-Gs-Hig"/>
-                                    <constraint firstItem="rQ2-j3-kPc" firstAttribute="top" secondItem="TTc-Gt-toG" secondAttribute="bottom" constant="15" id="Ouw-qC-Ku2"/>
-                                    <constraint firstItem="xKi-Zf-pFg" firstAttribute="leading" secondItem="TTc-Gt-toG" secondAttribute="trailing" constant="14" id="PHw-6U-vY4"/>
-                                    <constraint firstItem="JW3-YI-pjI" firstAttribute="top" secondItem="pfq-oD-2kk" secondAttribute="top" id="PtC-fA-zXF"/>
-                                    <constraint firstAttribute="height" constant="221" id="QA0-uZ-aUN"/>
-                                    <constraint firstItem="brG-Im-dLW" firstAttribute="leading" secondItem="pfq-oD-2kk" secondAttribute="leading" constant="1" id="ZU1-Is-Dk2"/>
-                                    <constraint firstItem="rQ2-j3-kPc" firstAttribute="leading" secondItem="pfq-oD-2kk" secondAttribute="leading" constant="1" id="a1a-nw-1km"/>
-                                    <constraint firstItem="JW3-YI-pjI" firstAttribute="leading" secondItem="brG-Im-dLW" secondAttribute="trailing" constant="14" id="aWY-wC-gLs"/>
-                                    <constraint firstItem="xKi-Zf-pFg" firstAttribute="top" secondItem="JW3-YI-pjI" secondAttribute="bottom" constant="15" id="bfe-V0-NsV"/>
-                                    <constraint firstItem="rx9-dx-wJA" firstAttribute="leading" secondItem="XKq-dA-CnT" secondAttribute="trailing" constant="14" id="fxU-qH-JPS"/>
-                                    <constraint firstItem="XKq-dA-CnT" firstAttribute="top" secondItem="rQ2-j3-kPc" secondAttribute="bottom" constant="15" id="i98-Gy-lIu"/>
-                                    <constraint firstItem="TTc-Gt-toG" firstAttribute="leading" secondItem="pfq-oD-2kk" secondAttribute="leading" constant="1" id="l9p-Wb-PeX"/>
-                                    <constraint firstItem="XKq-dA-CnT" firstAttribute="leading" secondItem="pfq-oD-2kk" secondAttribute="leading" constant="1" id="oPo-zh-5qB"/>
-                                    <constraint firstItem="8Wt-LZ-CEe" firstAttribute="leading" secondItem="rQ2-j3-kPc" secondAttribute="trailing" constant="14" id="p3c-hu-qhS"/>
-                                    <constraint firstItem="TTc-Gt-toG" firstAttribute="top" secondItem="brG-Im-dLW" secondAttribute="bottom" constant="15" id="rPP-9w-bB9"/>
-                                    <constraint firstAttribute="width" constant="279" id="ruc-nZ-T6N"/>
-                                    <constraint firstItem="8Wt-LZ-CEe" firstAttribute="top" secondItem="xKi-Zf-pFg" secondAttribute="bottom" constant="15" id="sKK-sS-LjI"/>
-                                    <constraint firstItem="brG-Im-dLW" firstAttribute="top" secondItem="pfq-oD-2kk" secondAttribute="top" id="v7m-Jp-19V"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="pfq-oD-2kk" firstAttribute="centerY" secondItem="ZmQ-WC-5pH" secondAttribute="centerY" constant="-19.5" id="RDE-Fq-8yM"/>
-                            <constraint firstItem="pfq-oD-2kk" firstAttribute="centerX" secondItem="ZmQ-WC-5pH" secondAttribute="centerX" id="tYs-yG-DRZ"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="firstButton" destination="XKq-dA-CnT" id="C0K-kw-5Zz"/>
-                        <outlet property="secondButton" destination="rx9-dx-wJA" id="QtR-wg-5YY"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6jj-f8-Upx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2649" y="-461"/>
-        </scene>
         <!--Picker Colelction View Controller-->
         <scene sceneID="Uag-Yh-bSY">
             <objects>
                 <collectionViewController automaticallyAdjustsScrollViewInsets="NO" id="4CO-kX-J2c" customClass="PickerColelctionViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" id="0GQ-v4-2od" customClass="TouchCollectionView" customModule="Horoscope" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="GBl-f6-J5B" customClass="KRLCollectionViewGridLayout"/>
                         <cells/>
@@ -321,14 +179,4 @@
             <point key="canvasLocation" x="2874" y="339"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="carier" width="132" height="44"/>
-        <image name="family" width="132" height="44"/>
-        <image name="health" width="132" height="44"/>
-        <image name="love" width="132" height="44"/>
-        <image name="money" width="132" height="44"/>
-        <image name="teen" width="132" height="44"/>
-        <image name="tomorrow" width="132" height="44"/>
-        <image name="year" width="132" height="44"/>
-    </resources>
 </document>

@@ -44,9 +44,10 @@ class Horoscope {
 
     func update() {
         updateTask?.cancel()
-        updateTask = RequestWrapper.sharedInstance.horoscope(gender, category: category, zodiac: zodiac, type: type, date: date(), successBlock: { (task : NSURLSessionDataTask, object : AnyObject) -> () in
-
-            self.text = object["text"] as? String
+        updateTask = RequestWrapper.sharedInstance.horoscope(gender, category: category, zodiac: zodiac, type: type, date: date(), successBlock: { (task : NSURLSessionDataTask, object : AnyObject?) -> () in
+            if let object = object {
+                self.text = object["text"] as? String
+            }
             self.notifyChange(nil)
             }) { (task : NSURLSessionDataTask?, error : NSError) -> () in
 

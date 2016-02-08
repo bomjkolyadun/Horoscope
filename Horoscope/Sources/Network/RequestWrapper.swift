@@ -11,7 +11,7 @@ import UIKit
 private let kHostName = "http://horoscopes.invk.org/"
 private let kHoroscopePath = "api/v1/horoscope"
 
-typealias SuccessBlock = (NSURLSessionDataTask, AnyObject) -> ()
+typealias SuccessBlock = (NSURLSessionDataTask, AnyObject?) -> ()
 typealias FailtureBlock = (NSURLSessionDataTask?, NSError) -> ()
 
 class RequestWrapper {
