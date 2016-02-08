@@ -25,13 +25,9 @@ class PickerColelctionViewController: UICollectionViewController, ZodiacCellDele
     }
     internal var category : HoroCategory = .General
     internal var delegate: PickerDelegate?
-    internal var categoryImages : [String]
-    internal var typeImages : [String]?
-
-    required init?(coder aDecoder: NSCoder) {
-        categoryImages = ["carier", "family", "health", "love", "money", "teen"]
-        super.init(coder: aDecoder)
-    }
+    private var categoryImages : [String] = ["family", "carier", "love", "health", "teen", "money"]
+    private var map: [String: HoroCategory] = ["carier" : .Carrier, "family" : .Family, "health" : .Health, "love" : .Love, "money" : .Money, "teen" : .Teen]
+    private var typeImages : [String]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +42,11 @@ class PickerColelctionViewController: UICollectionViewController, ZodiacCellDele
     func updateButtons() {
         switch type {
         case .Today:
-            typeImages = ["tomorrow", "year"]
+            typeImages = ["year", "tomorrow"]
         case .Tomorrow:
-            typeImages = ["today", "year"]
+            typeImages = ["year", "today"]
         default:
-            typeImages = ["today", "tomorrow"]
+            typeImages = ["tomorrow", "today"]
         }
         self.collectionView?.reloadData()
     }
@@ -91,37 +87,45 @@ class PickerColelctionViewController: UICollectionViewController, ZodiacCellDele
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kReuseIdentifier, forIndexPath: indexPath) as! ZodiacCell
-        let index = indexPath.item
+        let index = indexPath.row
         if indexPath.section == 0 {
+            let name = categoryImages[index]
             let image = UIImage.init(named: categoryImages[index])
             cell.button.setImage(image, forState: .Normal)
-            cell.button.tag = index + 1
+            cell.button.tag = (map[name]?.rawValue)!
         } else {
-            let image = UIImage.init(named: typeImages![index])
+            let name = typeImages![index]
+            let image = UIImage.init(named: name)
             cell.button.setImage(image, forState: .Normal)
-            cell.button.tag = index + 1
+            if name == "tomorrow" {
+                cell.button.stringTag = HoroType.Tomorrow.rawValue
+            } else if name == "today"  {
+                cell.button.stringTag = HoroType.Today.rawValue
+            } else {
+                cell.button.stringTag = HoroType.Year.rawValue
+            }
         }
         cell.delegate = self
         return cell
     }
 
     func cellDidButtonAction(cell: ZodiacCell, sender: UIButton) {
-//        pickedItem = Gender(rawValue: sender.tag)
+        if let pickedItem = sender.stringTag {
+            guard let type = HoroType(rawValue: pickedItem)
+                else {return}
+            typeAction(type)
+        } else {
+            let tag = sender.tag
+            let newCategory = HoroCategory(rawValue: tag)!
+            categoryAction(newCategory)
+        }
     }
 
-    func typeAction(sender: AnyObject) {
-        guard let senderView = sender as? UIView
-            else { return }
-        let tag = senderView.tag
-        let newCategory = HoroCategory(rawValue: tag)!
+    func categoryAction(newCategory: HoroCategory) {
         self.delegate?.picker(self, didPickCategory: newCategory, type: type)
     }
 
-    func dateAction(sender: AnyObject) {
-        guard let senderView = sender as? UIButton
-            else { return }
-        let tag = senderView.stringTag
-        let newType = HoroType(rawValue: tag!)!
+    func typeAction(newType: HoroType) {
         self.delegate?.picker(self, didPickCategory: category, type: newType)
     }
 

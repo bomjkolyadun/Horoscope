@@ -31,7 +31,7 @@ class SignDetailViewController: UITableViewController, PickerDelegate {
                 else {return}
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateData:", name:kModelChangeNotification, object: object)
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateError:", name:kModelChangeErrorNotification, object: object)
-            object.update()
+            refresh(self)
         }
     }
 
@@ -40,6 +40,7 @@ class SignDetailViewController: UITableViewController, PickerDelegate {
         let firstRow = NSIndexPath(forRow: 0, inSection: 0);
         self.tableView.reloadRowsAtIndexPaths([firstRow], withRowAnimation: .Automatic)
         self.tableView.endUpdates()
+        refreshControl?.endRefreshing()
     }
 
     func updateError(note: NSNotification) {
@@ -55,12 +56,23 @@ class SignDetailViewController: UITableViewController, PickerDelegate {
             alert.addAction(action)
             self.presentViewController(alert, animated: true, completion: nil)
         }
+        refreshControl?.endRefreshing()
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 44.0;
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.whiteColor()
+        refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refreshControl
+        self.tableView.addSubview(refreshControl)
+    }
+
+    func refresh(sender: AnyObject) {
+        refreshControl?.beginRefreshing()
+        horoscope?.update()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -106,7 +118,7 @@ class SignDetailViewController: UITableViewController, PickerDelegate {
         if let text = horoscope?.text {
             cell.textLabel?.text = text
         } else {
-            cell.textLabel?.text = "Загрузка..."
+            cell.textLabel?.text = nil
         }
         return cell
     }

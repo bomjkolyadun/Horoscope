@@ -305,7 +305,7 @@
         <scene sceneID="Uag-Yh-bSY">
             <objects>
                 <collectionViewController automaticallyAdjustsScrollViewInsets="NO" id="4CO-kX-J2c" customClass="PickerColelctionViewController" customModule="Horoscope" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" id="0GQ-v4-2od" customClass="TouchCollectionView" customModule="Horoscope" customModuleProvider="target">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" id="0GQ-v4-2od" customClass="TouchCollectionView" customModule="Horoscope" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewLayout key="collectionViewLayout" id="GBl-f6-J5B" customClass="KRLCollectionViewGridLayout"/>

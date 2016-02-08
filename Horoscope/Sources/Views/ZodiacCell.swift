@@ -29,11 +29,16 @@ class ZodiacCell: UICollectionViewCell {
         cellButton.imageView?.contentMode = .ScaleAspectFit
         cellButton.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         cellButton.addTarget(self, action: "buttonAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.contentView.addSubview(cellButton)
+        contentView.addSubview(cellButton)
         button = cellButton
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+
+    override func prepareForReuse() {
+        button.stringTag = nil
+        button.tag = 0
     }
 }

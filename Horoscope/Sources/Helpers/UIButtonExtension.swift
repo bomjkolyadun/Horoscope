@@ -18,14 +18,12 @@ extension UIButton {
             return objc_getAssociatedObject(self, &AssociatedKeys.StringTagKey) as? String
         }
         set {
-            if let newValue = newValue {
-                objc_setAssociatedObject(
-                    self,
-                    &AssociatedKeys.StringTagKey,
-                    newValue as NSString?,
-                    .OBJC_ASSOCIATION_RETAIN_NONATOMIC
-                )
-            }
+            objc_setAssociatedObject(
+                self,
+                &AssociatedKeys.StringTagKey,
+                newValue as NSString?,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
         }
     }
 }
