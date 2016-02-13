@@ -9,8 +9,8 @@
 import UIKit
 
 private let kReuseIdentifier = "buttonCell"
-private let kRowHeightPhone : CGFloat = 60.0
-private let kRowHeightPad : CGFloat = 90.0
+private let kRowHeightPhone : CGFloat = 62.0
+private let kRowHeightPad : CGFloat = 100.0
 
 protocol PickerDelegate {
     func picker(picker: PickerColelctionViewController, didPickCategory category: HoroCategory, type: HoroType)
